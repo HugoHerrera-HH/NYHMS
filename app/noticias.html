@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+            /* Estilo para ocultar la imagen por atributo src específico */
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+    /* Otros estilos si es necesario */
+}
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #3498db;
+            color: #000;
+        }
+
+        #title-container {
+            background-color: #eee;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #title-container h1,
+        #title-container h2 {
+            color: #000;
+        }
+
+        #noticias-title {
+            font-size: 2rem;
+            color: #000;
+        }
+
+        #news-container {
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        #news-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #news img {
+            max-width: 800px; /* Tamaño máximo de 800px para las imágenes */
+            width: 100%;
+            height: auto;
+            border: 2px solid #000; /* Añadir un borde negro de 2px alrededor de la imagen */
+        }
+
+        #menu-button {
+            background-color: #3498db; /* Fondo azul */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px; /* Espaciado interno del botón */
+            border: none; /* Sin borde */
+            border-radius: 20px; /* Bordes redondos */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombreado */
+            cursor: pointer;
+            margin-top: 10px; /* Espaciado superior */
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title-container">
+        <h1>Hugo Santiago & Asociados</h1>
+        <h2>Todo lo que necesitas en la palma de tu mano</h2>
+        <button id="menu-button" onclick="window.location.href='menu.html'">Volver al Menú</button>
+    </div>
+    <h1 id="noticias-title">Noticias</h1>
+    <div id="news-container">
+        <div id="news-content">
+            <div id="news">
+                <!-- Ejemplo de imagen -->
+                <img src="imagen1.jpg" alt="Ejemplo de imagen">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer-content">
+            <p>Ingeniería de Sistemas - Programación Móvil</p>
+            <p>Santiago Baquero & Hugo Herrera</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.1/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

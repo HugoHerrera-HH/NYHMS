@@ -1,0 +1,73 @@
+
+
+body {
+    background-color: black;
+}
+
+.container {
+    padding-top: 15vh;
+    min-height: 100vh;
+    background-color: #ddd;
+}
+
+#row_Stats {
+    width: 54%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+}
+
+#board {
+    height: 50vh;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tic-tac-toe-row > .col-xs-4 {
+    padding: 0;
+}
+
+.square {
+    height: 16.6vh;
+    background-color: #ff6801;
+    margin: 1.25px;
+    font-size: 16vh;
+    color: white;
+    cursor: pointer;
+}
+
+.square:hover {
+    box-shadow: 0 0 25px #333;
+}
+
+.text-vertical-center {
+    line-height: 16.6vh;
+}
+
+.no-pad {
+    padding: 0 0 0 0;
+}
+
+.modal-content,
+button {
+    border-radius: 0 !important;
+}
+
+.modal-header {
+    background-color: #ff6801;
+    color: #fff;
+}
+
+.modal-body {
+     background-color: #ddd;
+}
+
+.modal-footer {
+    background-color: #ff6801;
+}
+
+button {
+    font-weight: bold !important;
+    color: #ff6801 !important;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App-Hugo-Santiago</title>
+  <!-- BOOSTRAP CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="./main.css">
+
+  <style>
+    body {
+      background-image: url('/img/fondo.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+    }
+/* Estilo para ocultar la imagen por atributo src específico */
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+    /* Otros estilos si es necesario */
+}
+ 
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">Hugo-Santiago-App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</a>
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          <a class="nav-link logged-in" href="#" id="logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h3 class="text-light">Sign Up</h3>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="signup-form">
+            <div class="mb-3">
+              <label for="email" class="form-label text-light">Email:</label>
+              <input type="text" id="signup-email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label text-light">Password:</label>
+              <input type="password" id="signup-password" class="form-control" required>
+              <br>
+            
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+
+              
+             
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSignin" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="text-primary">Sign In</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" id="login-email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input type="password" id="login-password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
+            <button type="button" class="btn btn-info w-100 mb-3" id="googleLogin">Sign In with Google</button>
+            <button type="button" class="btn btn-primary w-100 mb-3" id="facebookLogin">Sign In with Facebook</button>
+            <button type="button" class="btn btn-dark w-100" id="githubLogin">Sign In with Github</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Toastify js -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="./assets/main.js" type="module"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic-Tac-Toe - Responsive 2 Player</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="tictactoe2.css">
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Estilo para ocultar la imagen por atributo src específico */
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+    /* Otros estilos si es necesario */
+}
+ 
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" id="row_Stats">
+                <div class="col-xs-4 no-pad text-center">
+                    <div>
+                        <strong><u>X Wins</u></strong>
+                    </div>
+                    <div>
+                        <strong id="xWins">0</strong>
+                    </div>
+                </div>
+                <div class="col-xs-4 text-center no-pad">
+                    <strong><u>Jugador</u><br /><span id="playerTurn">X</span></strong>
+                </div>
+                <div class="col-xs-4 text-center no-pad">
+                    <div>
+                        <strong><u>O Wins</u></strong>
+                    </div>
+                    <div>
+                        <strong id="oWins">0</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center text-vertical-center" id="board">
+                        <div class="row tic-tac-toe-row">
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="0" data-y-coord="0"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="1" data-y-coord="0"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="2" data-y-coord="0"></div>
+                            </div>
+                        </div>
+                        <div class="row tic-tac-toe-row">
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="0" data-y-coord="1"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="1" data-y-coord="1"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="2" data-y-coord="1"></div>
+                            </div>
+                        </div>
+                        <div class="row tic-tac-toe-row">
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="0" data-y-coord="2"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="1" data-y-coord="2"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="square" data-x-coord="2" data-y-coord="2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <br><br>
+                    <a href="tictactoe.html"><button>Jugar solo</button></a>
+                    <br>
+                    <br>
+                    <button>
+                        <a href="/app/menu.html"class="boton-azul">Regresar</a>
+                    </button>
+            
+                </div>
+            </div>
+            <div class="row hidden" id="resetContainer">
+                <div class="col-xs-12 text-center">
+                    <button class="btn btn-default btn-lg" id="btn_Reset">Jugar de Nuevo!</button>
+                </div>
+            </div>
+        </div>
+        <div id="winModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-win-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="reset('win');">Jugar de Nuevo</button>
+                        <button type="button" class="btn btn-default modal-close" data-dismiss="modal" id="btn_ModalClose">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="drawModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Esto es un Empate!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Los dos Perdieron</p>
+                        <p>Haga clic en el botón Jugar de nuevo para volver a repetir o haga clic en el botón Cerrar para que ambos se maravillen de su falta de capacidad para burlarse mutuamente.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="reset('draw');">Jugar de Nuevo</button>
+                        <button type="button" class="btn btn-default modal-close" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="tictactoe2.js"></script>
+    </body>
+</html>
